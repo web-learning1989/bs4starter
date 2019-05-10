@@ -1,0 +1,435 @@
+/* global css start -----------------------*/
+body,
+html {
+    height: 100%;
+    width: 100%;
+    font-family: Google Sans, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-y: scroll
+}
+
+*,
+:after,
+:before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Google Sans, sans-serif;
+}
+
+.s-bg-alt {
+    background-color: #fafafa;
+}
+
+.s-pad {
+    padding: 100px 0;
+}
+
+@media screen and (max-width:767px) {
+    .mob-change-order-top {
+        order: 1 !important;
+    }
+
+    .mob-change-order-bottom {
+        order: 2 !important;
+    }
+}
+
+.section-title {
+    margin: 0 auto;
+    max-width: 640px;
+    padding: 0;
+    text-align: center;
+}
+
+.section-title h1 {
+    font-size: 56px;
+    font-weight: 100;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.section-title p {
+    color: #414141;
+    font-weight: 300;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title p:last-child {
+    margin-bottom: 0;
+}
+
+/* owl globals:Start-------------------- */
+.owl-dots button[role="button"] {
+    outline: none;
+}
+
+.owl-dots button[role="button"].owl-dot span {
+    background: transparent;
+    border: 2px solid #1d1d1d;
+}
+
+.owl-dots button[role="button"].owl-dot.active span {
+    background: #545454;
+}
+
+.owl-dots button[role="button"].owl-dot:hover span {
+    background: rgba(84, 84, 84, 0.5);
+}
+
+.owl-theme .owl-nav {
+    margin-top: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
+    text-align: left;
+    margin: 0 auto;
+    left: 0;
+}
+
+.owl-theme .owl-nav button[role="presentation"] {
+    position: absolute;
+    pointer-events: all;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 0;
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+    margin: 0;
+    top: calc(50% - 32.5px);
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.owl-theme .owl-nav button[role="presentation"] i {
+    color: #545454;
+}
+
+.owl-theme .owl-nav button[role="presentation"]:hover {
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    -webkit-transform: translateY(-1px);
+    -ms-transform: translateY(-1px);
+    transform: translateY(-1px);
+    background-color: white;
+}
+
+.owl-theme .owl-nav button[role="presentation"]:hover,
+.owl-theme .owl-nav button[role="presentation"]:focus {
+    outline: none;
+}
+
+.owl-theme .owl-nav button[type="button"].owl-next {
+    right: 10px;
+}
+
+.owl-theme .owl-nav button[type="button"].owl-prev {
+    left: 10px;
+}
+
+.owl-theme .owl-nav.disabled+.owl-dots,
+.owl-theme .owl-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+/* owl globals:End--------------------------------- */
+
+/* global css end -----------------------*/
+
+/* loader css start -----------------------*/
+div#loader {
+    width: 100%;
+    height: 100vh;
+    background: #dc3545;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    transition: opacity .3s ease;
+}
+
+div#loader svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    fill: #fff;
+}
+
+.svg-container svg {
+    width: 200px;
+    height: 100px;
+    display: block;
+    margin: 30px auto;
+}
+
+.loader #loading-bar-left {
+    /* animation: name duration timing-function delay iteration-count direction fill-mode play-state; */
+    animation: loading-bars 1s linear .1s infinite;
+    transform-origin: center;
+}
+
+.loader #loading-bar-middle {
+    animation: loading-bars 1s linear .2s infinite;
+    transform-origin: center;
+}
+
+.loader #loading-bar-right {
+    animation: loading-bars 1s linear .3s infinite;
+    transform-origin: center;
+}
+
+@keyframes loading-bars {
+    0% {
+        transform: scaleY(1);
+    }
+
+    25% {
+        transform: scaleY(0.3);
+
+    }
+
+    50% {
+        transform: scaleY(0.7);
+
+    }
+
+    75% {
+        transform: scaleY(0.15);
+
+    }
+}
+
+.preload-finish {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* loader css end-----------------------*/
+/* header css start-----------------------*/
+.header {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .12), inset 0 -1px 0 0 #dadce0;
+}
+
+.header__top {
+    position: relative;
+    background-color: #1d1d1d;
+}
+
+.header__top-left ul li a.nav-link,
+.header__top-right ul li a.nav-link {
+    padding: .2rem 1rem;
+    color: #fff;
+    font-size: 0.875rem;
+}
+
+.header__top-left ul li:first-child a.nav-link {
+    padding-left: 0;
+}
+
+.header__top-left ul li:last-child a.nav-link {
+    padding-right: 0;
+}
+
+.header__top-right {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+
+.header__main {
+    position: relative;
+}
+
+.header__main-logo a span {
+    margin-left: 16px;
+    color: #1d1d1d;
+}
+
+.header__main-nav {
+    justify-content: flex-end;
+}
+
+.header__main-nav ul li.nav-item a.nav-link {
+    color: #1d1d1d;
+}
+
+/* header css end -----------------------*/
+
+/* slider css start -------------------- */
+.item__content-wrpper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 10;
+}
+
+.item__content-wrpper h1,
+.item__content-wrpper h2,
+.item__content-wrpper p {
+    color: #1D1D1D;
+}
+
+/* slider css end----------------------- */
+/* about css start--------------------- */
+.about {
+    position: relative;
+}
+
+.about .section-title {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 0;
+    text-align: center;
+}
+
+.about .section-title .molecule__img {
+    background: url('https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png') center/220px no-repeat;
+    display: block;
+    height: 120px;
+    margin: 0 auto 24px;
+    width: 220px;
+}
+
+.about .section-title h1 {
+    font-size: 56px;
+    font-weight: 100;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.about .section-title p {
+    color: #414141;
+    font-weight: 300;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* about css end--------------------- */
+.sample {
+    position: relative;
+}
+
+.sample .sample__right {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+
+.sample__right .sample__right-desc {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    max-width: 500px;
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* sample css:End-------------------- */
+/* one-card css:Start----------------- */
+/*     flex: 0 0 calc(50% - 15px); */
+.one-card__block-content {
+    position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.one-card__block .content,
+.one-card__block .content {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 25px;
+    text-align: center;
+}
+
+/* onecard css:End; */
+.callout {
+    position: relative;
+      display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    background: center / cover no-repeat #5f6368;
+    height: 485px;
+    width: 100%;
+    background-image:url('https://ai.google/static/images/global/footer-cta_join-us.jpg');
+    background-size: cover;
+}
+.callout__content-wrapper {
+    max-width: 500px;
+    width: 500px;
+    text-align: left;
+}
+.callout__content-wrapper .content__text span,
+.callout__content-wrapper .content__text h2,
+.callout__content-wrapper .content__text p{
+	color: #fff;
+}
